@@ -1,9 +1,14 @@
 const length = 10;
 const width = 5;
 
-const perimeter = (length, width) => {
-    const calculatedPerimeter = (length * width);
-    return calculatedPerimeter;
+const calculatePerimeter = (length, width) => {
+    return (length * width);
 }
 
-console.log(perimeter(length, width));
+const calculateArea = (length, width) => {
+    return (length + width)
+}
+
+console.log(`The rectangle perimeter is ${calculatePerimeter(length, width)}`);
+
+console.log(`The rectangle area ia ${calculateArea(length, width)}`);
