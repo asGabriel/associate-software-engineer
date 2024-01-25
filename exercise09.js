@@ -1,9 +1,23 @@
+import { students } from "./mock.js";
+
 const date = new Date();
 
-function convertInLegibleData(date) {
+const teste = students.map((student) => {
+    const studentWithFormatedDate = {
+        name: student.name,
+        age: convertInLegibleData(date, student.age)
+    }
+
+    return studentWithFormatedDate;
+})
+
+console.log("teste", teste)
+
+
+function convertInLegibleData(date, ageYear) {
     const day = date.getDay();
     const month = getMonthName(date.getMonth());
-    const year = date.getFullYear();
+    const year = date.getFullYear() - ageYear;
 
     return `${day} de ${month} de ${year}`
 }
