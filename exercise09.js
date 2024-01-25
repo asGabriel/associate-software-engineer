@@ -2,7 +2,7 @@ import { students } from "./mock.js";
 
 const date = new Date();
 
-const teste = students.map((student) => {
+const studentsWithDate = students.map((student) => {
     const studentWithFormatedDate = {
         name: student.name,
         age: convertInLegibleData(date, student.age)
@@ -10,9 +10,6 @@ const teste = students.map((student) => {
 
     return studentWithFormatedDate;
 })
-
-console.log("teste", teste)
-
 
 function convertInLegibleData(date, ageYear) {
     const day = date.getDay();
@@ -53,4 +50,4 @@ function getMonthName(monthNumber) {
     }
 }
 
-console.log(convertInLegibleData(date));
+console.log("studentsWithDate", studentsWithDate);
