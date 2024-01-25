@@ -1,16 +1,12 @@
 import { numericObject } from "./mock.js";
 
-var highestNumber = 0;
-for (let property in numericObject) {
-    highestNumber = compare(highestNumber, numericObject[property])
+let highestNumber = 0;
+for (const property in numericObject) {
+    highestNumber = getGreaterNumber(highestNumber, numericObject[property])
 }
 
-function compare(number, numberToCompare) {
-    if (numberToCompare > number) {
-        return numberToCompare;
-    } else {
-        return number;
-    }
+function getGreaterNumber(number, numberToCompare) {
+    return numberToCompare > number ? numberToCompare : number
 }
 
 console.log(`The highest number is ${highestNumber}`);

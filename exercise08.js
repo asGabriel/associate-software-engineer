@@ -1,20 +1,15 @@
-// calcular a média de idade dos estudantes e listar os que estão acima da média
 import { students } from "./mock.js";
 
-let averageStudentAge = [];
+const averageStudentsAge = (students.reduce(
+    (sum, obj) => {
+        return sum + obj.age;
+    }, 0
+))/students.length;
 
-students.map((student) => averageStudentAge.push(student.age));
-
-averageStudentAge = averageStudentAge.reduce(
-    (total, value) => {
-        return total + value
-    }
+const studentsUnderAverageAge = students.filter(
+    (student) => student.age > averageStudentsAge
 );
 
-const listOfStudentUnderAverageAge = students.filter(
-    (person) => person.age > (averageStudentAge/students.length)
-);
+console.log(`Average students age: ${averageStudentsAge}`);
 
-console.log(`Average age: ${averageStudentAge/students.length}`);
-
-console.log(listOfStudentUnderAverageAge);
+console.log("Students under average age:", studentsUnderAverageAge);
