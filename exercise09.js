@@ -1,53 +1,20 @@
 import { students } from "./mock.js";
 
-const date = new Date();
-
 const studentsWithDate = students.map((student) => {
     const studentWithFormatedDate = {
-        name: student.name,
-        age: convertInLegibleData(date, student.age)
+        ...student,
+        longDateFormat: convertInLegibleData(student.birthDate)
     }
 
     return studentWithFormatedDate;
 })
 
-function convertInLegibleData(date, ageYear) {
-    const day = date.getDay();
-    const month = getMonthName(date.getMonth());
-    const year = date.getFullYear() - ageYear;
+function convertInLegibleData(birthDate) {
+    // format: YYYY-MM-DD
+    const birthDateSplit = birthDate.split("-");
+    const date = new Intl.DateTimeFormat("pt-br", { dateStyle: "medium" }).format(new Date(birthDateSplit[0], birthDateSplit[1], birthDateSplit[2]));
 
-    return `${day} de ${month} de ${year}`
-}
-
-function getMonthName(monthNumber) {
-    switch (monthNumber) {
-        case 0:
-            return "Janeiro"
-        case 1:
-            return "Fevereiro"
-        case 2:
-            return "Março"
-        case 3:
-            return "Abril"
-        case 4:
-            return "Maio"
-        case 5:
-            return "Junho"
-        case 6:
-            return "Julho"
-        case 7:
-            return "Agosto"
-        case 8:
-            return "Setembro"
-        case 9:
-            return "Outubro"
-        case 10:
-            return "Novembro"
-        case 11:
-            return "Dezembro"
-        default:
-            return "Mês inválido."
-    }
+    return date;
 }
 
 console.log("studentsWithDate", studentsWithDate);

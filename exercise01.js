@@ -6,7 +6,7 @@ const calculatePerimeter = (length, width) => {
 };
 
 const calculateArea = (length, width) => {
-    return 2 * length + width;
+    return 2 * (length + width);
 };
 
 console.log(`The rectangle perimeter is ${calculatePerimeter(length, width)}`);
