@@ -1,10 +1,12 @@
 import { students } from "./mock.js";
 
-const averageStudentsAge = (students.reduce(
-    (sum, obj) => {
-        return sum + obj.age;
+const sumStudentsAge = (students.reduce(
+    (sum, student) => {
+        return sum + student.age;
     }, 0
-))/students.length;
+));
+
+const averageStudentsAge = sumStudentsAge/students.length;
 
 const studentsUnderAverageAge = students.filter(
     (student) => student.age > averageStudentsAge

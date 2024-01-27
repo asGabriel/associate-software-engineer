@@ -1,6 +1,6 @@
-const color = "black";
+const COLOR = "black";
 
-switch (color) {
+switch (COLOR) {
     case "red":
         console.log("drupas");
         break;
