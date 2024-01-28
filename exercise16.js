@@ -4,7 +4,6 @@ function greetings(name) {
   } catch (error) {
     return { message: "Invalid name", error: error.message };
   }
-  // if(name === undefined) return "You must insert a valid name";
 
   return "Guest";
 }
