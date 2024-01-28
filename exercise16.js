@@ -1,10 +1,12 @@
-
 function greetings(name) {
-    if(name === undefined) return "You must insert a valid name";
-    
-    if(name.length > 0) return `Hello ${name}, nice to see you here`;
-    
-    return "Guest";
+  try {
+    if (name.length > 0) return `Hello ${name}, nice to see you here`;
+  } catch (error) {
+    return { message: "Invalid name", error: error.message };
+  }
+  // if(name === undefined) return "You must insert a valid name";
+
+  return "Guest";
 }
 
 // test1
