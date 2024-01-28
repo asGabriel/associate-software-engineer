@@ -10,7 +10,6 @@ const studantsWithDaysUntilBirthDate = students.map((student) => {
 });
 
 function daysUntilBirthDate(birthDate) {
-  const splitBirthDate = birthDate.split("-");
   const birthDateWithCurrentYear = new Date(birthDate).setFullYear(new Date().getFullYear())
 
   const days = Math.round((new Date() - birthDateWithCurrentYear) / 86400000);
