@@ -1,6 +1,6 @@
 import { numericObject } from "./mock.js";
 
-let highestNumber = 0;
+let highestNumber = -Infinity;
 for (const property in numericObject) {
     highestNumber = highestNumber > numericObject[property] ? highestNumber : numericObject[property]
 }
