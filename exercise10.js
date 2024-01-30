@@ -1,18 +1,26 @@
 import { students } from "./mock.js";
 
 const studantsWithDaysUntilBirthDate = students.map((student) => {
-  const newStudent = {
+  return {
     ...student,
     daysUntilBirthDate: daysUntilBirthDate(student.birthDate),
   };
-
-  return newStudent;
 });
 
 function daysUntilBirthDate(birthDate) {
-  const birthDateWithCurrentYear = new Date(birthDate).setFullYear(new Date().getFullYear())
+  const birthDateWithCurrentYear = new Date(birthDate).setFullYear(
+    new Date().getFullYear()
+  );
 
-  const days = Math.round((new Date() - birthDateWithCurrentYear) / 86400000);
+  const second = 1000;
+  const minute = 60;
+  const hour = 60;
+  const day = 24;
+  const year = 365;
+
+  const days =
+    Math.round((new Date() - new Date(birthDateWithCurrentYear)) / (second * minute * hour * day));
+
   if (days < 0) {
     return -days;
   }
