@@ -1,4 +1,5 @@
 import { sales } from "./mock.js";
+import { convertMilissecondsToDays } from "./utils/date.js";
 
 let ageGroups = {
   "15-": [],
@@ -22,19 +23,6 @@ function rangeByAge(age) {
   } else {
     ("Invalid age");
   }
-}
-
-function convertMilissecondsToDays(milissecondsDate) {
-  const second = 1000;
-  const minute = 60;
-  const hour = 60;
-  const day = 24;
-  const year = 365;
-
-  const days =
-    new Date(milissecondsDate) / (second * minute * hour * day) / year;
-
-  return days;
 }
 
 function groupByAgeRange(students, purchases) {
