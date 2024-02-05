@@ -34,11 +34,15 @@ const convertMilissecondsToDays = (milissecondsDate) => {
 
 const convertInLegibleData = (date) => {
   // format: YYYY-MM-DD
-  const formatedDate = new Intl.DateTimeFormat("pt-br", {
-    dateStyle: "medium",
-  }).format(new Date(date));
+  try {
+    const formatedDate = new Intl.DateTimeFormat("pt-br", {
+      dateStyle: "medium",
+    }).format(new Date(date));
 
-  return formatedDate;
+    return formatedDate;
+  } catch (error) {
+    return {error: error.message};
+  }
 };
 
 export { daysUntilBirthDate, convertMilissecondsToDays, convertInLegibleData };

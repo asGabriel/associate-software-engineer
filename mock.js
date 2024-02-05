@@ -97,7 +97,7 @@ const studentsError = [
   { name: "Ana", age: 20, birthDate: "2004-11-20" },
   { name: "João", age: 21, birthDate: "2003-01-21" },
   { name: "Maria", age: 19, birthDate: "12/01/2021" },
-  { name: "Pedro", age: 22, birthDate: "Data: 2000-11-23" },
+  { name: "Pedro", age: 22, birthDate: "Data: 2000-aa-23" },
   { name: "Fernanda", age: 18, birthDate: "2006-01-30" },
 ]
 

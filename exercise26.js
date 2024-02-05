@@ -1,8 +1,8 @@
-async function executePromise(responseMessage, TimeToTimeout) {
+async function executePromise(responseMessage, TIME_TO_TIMEOUT) {
   return new Promise((resolve, reject) => {
     setTimeout(() => {
       resolve(responseMessage);
-    }, TimeToTimeout);
+    }, TIME_TO_TIMEOUT);
   });
 }
 
