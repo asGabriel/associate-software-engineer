@@ -4,17 +4,15 @@ import { convertInLegibleData } from "./utils/date.js";
 const errorLog = [];
 
 const studentsFullDate = students.map((student) => {
-  try {
-    const propFullDate = {
-      ...student,
-      fullDateName: convertInLegibleData(student.birthDate),
-    };
-
-    return propFullDate;
-  } catch (error) {
-    errorLog.push({ error: error.message, studentName: student.name });
-    return {...student, fullDateName: "Error to convert"};
+  console.log(student.birthDate);
+  const fullDateName = convertInLegibleData(student.birthDate);
+  if (fullDateName.error) {
+    errorLog.push({ error: fullDateName.error, studentName: student.name });
   }
+  return {
+    ...student,
+    fullDateName: fullDateName,
+  };
 });
 
 console.log(studentsFullDate);
