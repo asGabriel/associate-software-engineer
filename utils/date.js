@@ -41,7 +41,7 @@ const convertInLegibleData = (date) => {
 
     return formatedDate;
   } catch (error) {
-    return {error: error.message};
+    throw new Error("Error to convert data");
   }
 };
 
