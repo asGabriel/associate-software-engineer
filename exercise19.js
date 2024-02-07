@@ -4,15 +4,21 @@ import { convertInLegibleData } from "./utils/date.js";
 const errorLog = [];
 
 const studentsFullDate = students.map((student) => {
-  console.log(student.birthDate);
-  const fullDateName = convertInLegibleData(student.birthDate);
-  if (fullDateName.error) {
-    errorLog.push({ error: fullDateName.error, studentName: student.name });
+  try {
+    const fullDateName = convertInLegibleData(student.birthDate);
+
+    return {
+      ...student,
+      fullDateName: fullDateName,
+    };
+  } catch (error) {
+    errorLog.push({ error: error.message, studentName: student.name });
+
+    return {
+      ...student,
+      fullDateName: error.message,
+    };
   }
-  return {
-    ...student,
-    fullDateName: fullDateName,
-  };
 });
 
 console.log(studentsFullDate);
