@@ -4,6 +4,9 @@ const numericObject = {
   a: 1,
   b: 2,
   c: 3,
+  f: 1,
+  g: 20,
+  h: 4
 };
 
 const students = [

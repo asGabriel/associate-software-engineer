@@ -3,23 +3,19 @@ import { convertInLegibleData } from "./utils/date.js";
 
 const errorLog = [];
 
-const studentsFullDate = students.map((student) => {
-  try {
-    const fullDateName = convertInLegibleData(student.birthDate);
-
-    return {
-      ...student,
-      fullDateName: fullDateName,
-    };
-  } catch (error) {
-    errorLog.push({ error: error.message, studentName: student.name });
-
-    return {
-      ...student,
-      fullDateName: error.message,
-    };
-  }
-});
+const studentsFullDate = students
+  .map((student) => {
+    try {
+      const fullDateName = convertInLegibleData(student.birthDate);
+      return {
+        ...student,
+        fullDateName: fullDateName,
+      };
+    } catch (error) {
+      errorLog.push({ error: error.message, studentName: student.name });
+    }
+  })
+  .filter((student) => student !== undefined);
 
 console.log(studentsFullDate);
 
