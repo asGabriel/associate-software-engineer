@@ -15,7 +15,7 @@ const studentsFullDate = students
       errorLog.push({ error: error.message, studentName: student.name });
     }
   })
-  .filter((student) => student !== undefined);
+  .filter((student) => student);
 
 console.log(studentsFullDate);
 
