@@ -5,12 +5,12 @@ const HOUR_PER_DAY = 24;
 const DAYS_PER_YEAR = 365;
 
 const daysUntilDate = (date) => {
-  const birthDateWithCurrentYear = new Date(date).setFullYear(
+  const dateWithCurrentYear = new Date(date).setFullYear(
     new Date().getFullYear()
   );
 
   const days = Math.round(
-    (new Date() - new Date(birthDateWithCurrentYear)) /
+    (new Date() - new Date(dateWithCurrentYear)) /
       (MILISECONDS_PER_SECOND *
         SECONDS_PER_MINUTE *
         MINUTES_PER_HOUR *
@@ -45,4 +45,4 @@ const convertInLegibleData = (date) => {
   }
 };
 
-export { daysUntilDate as daysUntilBirthDate, convertMilissecondsToDays, convertInLegibleData };
+export { daysUntilDate, convertMilissecondsToDays, convertInLegibleData };
