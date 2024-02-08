@@ -9,7 +9,7 @@ const studentsFullDate = students
       const fullDateName = convertInLegibleData(student.birthDate);
       return {
         ...student,
-        fullDateName: fullDateName,
+        fullDateName,
       };
     } catch (error) {
       errorLog.push({ error: error.message, studentName: student.name });
