@@ -1,6 +1,6 @@
-const spanHTML = document.getElementsByTagName("span");
+const spansHTML = document.getElementsByTagName("span");
 
-for (let index = 0; index < spanHTML.length; index++) {
-    const span = spanHTML[index];
+for (let index = 0; index < spansHTML.length; index++) {
+    const span = spansHTML[index];
     span.style.fontStyle = "italic"
 }

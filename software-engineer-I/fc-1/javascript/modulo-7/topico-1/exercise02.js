@@ -1,5 +1,5 @@
-const paragraphHTML = document.getElementsByTagName("p");
+const paragraphsHTML = document.getElementsByTagName("p");
 
-for (let index = 0; index < paragraphHTML.length; index++) {
-  paragraphHTML[index].style.color = "blue";
+for (let index = 0; index < paragraphsHTML.length; index++) {
+  paragraphsHTML[index].style.color = "blue";
 }
