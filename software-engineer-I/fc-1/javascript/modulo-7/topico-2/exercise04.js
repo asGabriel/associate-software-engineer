@@ -1,10 +1,14 @@
 const sendFormButtonHTML = document.getElementById("sendFormButton");
 
+const FAIL_MESSAGE = "The email field is empty. Please fill it out.";
+const SUCCESS_MESSAGE = "Form has been successfully sent";
+
 sendFormButton.addEventListener("click", () => {
   const emailInputHTML = document.getElementById("emailInput");
-  if (emailInputHTML.value.length === 0) {
-    alert("The email field is empty. Please fill it out.");
-  } else {
-    alert("Form has been succesfully sent");
-  }
+
+  checkIfInputIsEmpty(emailInputHTML, SUCCESS_MESSAGE, FAIL_MESSAGE);
 });
+
+function checkIfInputIsEmpty(inputHTML, successMessage, failedMessage) {
+  inputHTML.value.length === 0 ? alert(failedMessage) : alert(successMessage);
+}

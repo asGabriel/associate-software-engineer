@@ -3,16 +3,22 @@ const ocultableDivHTML = document.getElementById("toggleDiv");
 const buttonHTML = document.getElementById("buttonToHiddenToggleDiv");
 
 buttonHTML.addEventListener("click", () => {
-  if (
-    ocultableDivHTML.style.width === "100px" &&
-    ocultableDivHTML.style.height === "100px"
-  ) {
-    ocultableDivHTML.style.width = "0px";
-    ocultableDivHTML.style.height = "0px";
-    ocultableDivHTML.textContent = "";
-} else {
-    ocultableDivHTML.style.width = "100px";
-    ocultableDivHTML.style.height = "100px";
-    ocultableDivHTML.textContent = "Div Ocultável";
-  }
+  showOrHiddenHTMLElement(
+    ocultableDivHTML
+  );
 });
+
+function showOrHiddenHTMLElement(elementHTML) {
+  if (
+    elementHTML.style.width === "100px" &&
+    elementHTML.style.height === "100px"
+  ) {
+    elementHTML.style.width = "0px";
+    elementHTML.style.height = "0px";
+    elementHTML.textContent = "";
+  } else {
+    elementHTML.style.width = "100px";
+    elementHTML.style.height = "100px";
+    elementHTML.textContent = "Div Ocultável";
+  }
+}
