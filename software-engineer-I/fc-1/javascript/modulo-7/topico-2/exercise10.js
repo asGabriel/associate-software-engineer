@@ -1,7 +1,7 @@
 const inputHTML = document.getElementById("eventKeyPress");
 
-inputHTML.addEventListener("keydown", (key) => {
-  if (key.key === "Enter") {
+inputHTML.addEventListener("keydown", ({ key }) => {
+  if (key === "Enter") {
     alert("You press Enter");
   }
 });
